@@ -180,12 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // EmailJS Configuration
-    // CONFIGURE SUAS CHAVES AQUI - NÃO COMMITAR AS CHAVES REAIS
-    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Substitua pela sua chave
-    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Substitua pelo seu service ID
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Substitua pelo seu template ID
-    
-    emailjs.init(EMAILJS_PUBLIC_KEY);
+    emailjs.init("N3wNxTSbAf3AiDbBb");
     
     const contactForm = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -195,19 +190,13 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Verificar se as chaves foram configuradas
-        if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
-            showNotification('Configure as chaves do EmailJS primeiro!', 'error');
-            return;
-        }
-        
         // Mostrar loading
         btnText.style.display = 'none';
         btnSpinner.style.display = 'inline-block';
         submitBtn.disabled = true;
         
         // Enviar email via EmailJS
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+        emailjs.sendForm('service_i6xu6r1', 'template_63xjy0t', this)
             .then(function(response) {
                 console.log('Email enviado com sucesso!', response.status, response.text);
                 
