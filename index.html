@@ -1,373 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelo S Ribeiro - Desenvolvedor IA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcelo S Ribeiro – Desenvolvedor IA</title>
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Estilos (adicione o seu style.css, se quiser separar) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-container">
-                    <div class="logo-icon">
-                        <div class="logo-layers">
-                            <div class="logo-layer layer-1"></div>
-                            <div class="logo-layer layer-2"></div>
-                            <div class="logo-layer layer-3"></div>
-                        </div>
-                        <div class="logo-symbol">
-                            <span class="logo-ms">ms</span>
-                        </div>
-                        <div class="logo-circuit"></div>
-                        <div class="logo-particles">
-                            <div class="particle"></div>
-                            <div class="particle"></div>
-                            <div class="particle"></div>
-                        </div>
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-name">msribeiro</span>
-                        <span class="logo-subtitle">AI Developer</span>
-                    </div>
-                </div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Início</a></li>
-                <li><a href="#about" class="nav-link">Sobre</a></li>
-                <li><a href="#services" class="nav-link">Serviços</a></li>
-                <li><a href="#projects" class="nav-link">Projetos</a></li>
-                <li><a href="#contact" class="nav-link">Contato</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+  <!-- ===== NAVBAR =================================================== -->
+  <nav class="navbar">
+    <!-- ... conteúdo inalterado ... -->
+  </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="ai-name" id="ai-name">MarceloRibeiro</h1>
-            <h2>Desenvolvedor de Inteligência Artificial</h2>
-            <p>Desenvolvedor Full-Stack especializado em IA • Criando soluções digitais inovadoras</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Entre em Contato</a>
-                <a href="#projects" class="btn btn-secondary">Ver Projetos</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="ai-animation">
-                <div class="hero-icon-container">
-                    <div class="hero-icon-core">
-                        <div class="hero-icon-layers">
-                            <div class="hero-layer hero-layer-1"></div>
-                            <div class="hero-layer hero-layer-2"></div>
-                            <div class="hero-layer hero-layer-3"></div>
-                        </div>
-                        <div class="hero-icon-symbol">
-                            <div class="ai-brain">
-                                <div class="brain-node node-1"></div>
-                                <div class="brain-node node-2"></div>
-                                <div class="brain-node node-3"></div>
-                                <div class="brain-node node-4"></div>
-                                <div class="brain-connection conn-1"></div>
-                                <div class="brain-connection conn-2"></div>
-                                <div class="brain-connection conn-3"></div>
-                            </div>
-                        </div>
-                        <div class="hero-particles">
-                            <div class="hero-particle p-1"></div>
-                            <div class="hero-particle p-2"></div>
-                            <div class="hero-particle p-3"></div>
-                            <div class="hero-particle p-4"></div>
-                            <div class="hero-particle p-5"></div>
-                        </div>
-                    </div>
-                    <div class="hero-orbit">
-                        <div class="orbit-ring ring-1"></div>
-                        <div class="orbit-ring ring-2"></div>
-                        <div class="orbit-ring ring-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ===== HERO ===================================================== -->
+  <section id="home" class="hero">
+    <!-- ... conteúdo inalterado ... -->
+  </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Desenvolvedor Full-Stack apaixonado por tecnologia e inovação. Especializado em criar soluções digitais completas, desde landing pages de alta conversão até sistemas complexos com IA. Combino conhecimento técnico avançado em frontend, backend e inteligência artificial para entregar projetos que realmente fazem a diferença no seu negócio.</p>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React/Next.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>Inteligência Artificial</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Bancos de Dados</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile Development</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ===== ABOUT ==================================================== -->
+  <section id="about" class="about">
+    <!-- ... conteúdo inalterado ... -->
+  </section>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Serviços</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas de conversão otimizadas com design moderno e foco em resultados</p>
-                    <div class="service-features">
-                        <span>Design Responsivo</span>
-                        <span>SEO Otimizado</span>
-                        <span>Alta Conversão</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sites completos e aplicações web com tecnologias modernas</p>
-                    <div class="service-features">
-                        <span>React/Next.js</span>
-                        <span>Node.js</span>
-                        <span>Performance</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Frontend & Backend</h3>
-                    <p>Desenvolvimento full-stack com arquitetura escalável e moderna</p>
-                    <div class="service-features">
-                        <span>APIs RESTful</span>
-                        <span>Banco de Dados</span>
-                        <span>Deploy</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Inteligência Artificial</h3>
-                    <p>Soluções de IA personalizadas para automatizar e otimizar processos</p>
-                    <div class="service-features">
-                        <span>Machine Learning</span>
-                        <span>Chatbots</span>
-                        <span>Automação</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Análise de Dados</h3>
-                    <p>Transformo dados em insights valiosos com dashboards interativos</p>
-                    <div class="service-features">
-                        <span>Data Science</span>
-                        <span>Visualização</span>
-                        <span>Relatórios</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Aplicações Mobile</h3>
-                    <p>Apps móveis híbridos e PWAs com experiência nativa</p>
-                    <div class="service-features">
-                        <span>React Native</span>
-                        <span>PWA</span>
-                        <span>Cross-platform</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ===== SERVICES ================================================= -->
+  <section id="services" class="services">
+    <!-- ... conteúdo inalterado ... -->
+  </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-commerce Inteligente</h3>
-                        <p>Plataforma completa com IA para recomendações e análise de comportamento</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>AI/ML</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>App Delivery</h3>
-                        <p>Aplicativo mobile para delivery com tracking em tempo real e chatbot</p>
-                        <div class="project-tech">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Maps API</span>
-                            <span>AI Chat</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Dashboard Analytics</h3>
-                        <p>Painel administrativo com visualização de dados e insights em tempo real</p>
-                        <div class="project-tech">
-                            <span>Vue.js</span>
-                            <span>Python</span>
-                            <span>Chart.js</span>
-                            <span>WebSocket</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Landing Page SaaS</h3>
-                        <p>Página de conversão otimizada para startup de SaaS com integração de pagamento</p>
-                        <div class="project-tech">
-                            <span>Next.js</span>
-                            <span>Stripe</span>
-                            <span>Tailwind</span>
-                            <span>Analytics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Chatbot Inteligente</h3>
-                        <p>Assistente virtual com processamento de linguagem natural para atendimento</p>
-                        <div class="project-tech">
-                            <span>OpenAI</span>
-                            <span>NLP</span>
-                            <span>FastAPI</span>
-                            <span>Redis</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Sistema Financeiro</h3>
-                        <p>Plataforma segura para gestão financeira com autenticação avançada</p>
-                        <div class="project-tech">
-                            <span>Django</span>
-                            <span>JWT</span>
-                            <span>2FA</span>
-                            <span>Encryption</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ===== PROJECTS ================================================= -->
+  <section id="projects" class="projects">
+    <!-- ... conteúdo inalterado ... -->
+  </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>msribeiro2010@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h4>LinkedIn</h4>
-                            <p>linkedin.com/in/marcelo-ribeiro</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <h4>GitHub</h4>
-                            <p>github.com/msribeiro2010</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" name="from_name" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="from_email" placeholder="Seu Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="submit-btn">
-                        <span id="btn-text">Enviar Mensagem</span>
-                        <i id="btn-spinner" class="fas fa-spinner fa-spin" style="display: none;"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <!-- ===== CONTACT ================================================== -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Entre em Contato</h2>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 @msribeiro2010 • Desenvolvedor Full-Stack & IA • Todos os direitos reservados.</p>
+      <div class="contact-content">
+        <!-- Informações de contato (e-mail, GitHub, etc.) -->
+        <div class="contact-info">
+          <!-- ... conteúdo inalterado ... -->
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- ===== FORMULÁRIO ======================================== -->
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <input type="text"     name="from_name"   placeholder="Seu Nome"   required>
+          </div>
+          <div class="form-group">
+            <input type="email"    name="from_email"  placeholder="Seu Email"  required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+          </div>
+
+          <!-- campo oculto para data/hora -->
+          <input type="hidden" name="date_time" id="date_time">
+
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            <span id="btn-text">Enviar Mensagem</span>
+            <i   id="btn-spinner" class="fas fa-spinner fa-spin" style="display:none;"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER =================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 @msribeiro2010 • Desenvolvedor Full-Stack & IA • Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Seu JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
