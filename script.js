@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  emailjs.init('N3wNxTSbAf3AiDbBb');
+  emailjs.init('K7F_DE0sdVjTwV0P5');
 
   // ── Hamburger menu ──────────────────────────────────────────────
   const hamburger = document.querySelector('.hamburger');
