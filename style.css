@@ -648,6 +648,64 @@ body {
     align-items: center;
 }
 
+/* ── Profile photo ── */
+.profile-photo-wrapper {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 5s ease-in-out infinite;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 3px solid rgba(34, 197, 94, 0.45);
+    box-shadow:
+        0 0 0 6px rgba(34, 197, 94, 0.08),
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.profile-photo-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.12) 0%, transparent 70%);
+    z-index: 1;
+    animation: coreGlow 4s ease-in-out infinite alternate;
+}
+
+.profile-photo-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid;
+    opacity: 0.4;
+}
+
+.profile-photo-ring.ring-outer {
+    width: 340px;
+    height: 340px;
+    border-color: rgba(34, 197, 94, 0.25);
+    border-top-color: rgba(34, 197, 94, 0.65);
+    animation: orbiting 10s linear infinite;
+}
+
+.profile-photo-ring.ring-inner {
+    width: 322px;
+    height: 322px;
+    border-color: rgba(59, 130, 246, 0.15);
+    border-right-color: rgba(59, 130, 246, 0.5);
+    animation: orbiting 14s linear infinite reverse;
+}
+
 .ai-animation {
     display: flex;
     justify-content: center;
@@ -1662,14 +1720,35 @@ section {
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .ai-name {
         font-size: 2.2rem !important;
     }
-    
+
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .profile-photo-wrapper {
+        width: 230px;
+        height: 230px;
+    }
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+    .profile-photo-glow {
+        width: 200px;
+        height: 200px;
+    }
+    .profile-photo-ring.ring-outer {
+        width: 230px;
+        height: 230px;
+    }
+    .profile-photo-ring.ring-inner {
+        width: 216px;
+        height: 216px;
     }
     
     .contact-content {
