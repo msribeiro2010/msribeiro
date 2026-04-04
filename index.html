@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcelo S Ribeiro – Desenvolvedor IA</title>
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <div class="logo-container">
+            <div class="logo-icon">
+              <div class="logo-layers">
+                <div class="logo-layer layer-1"></div>
+                <div class="logo-layer layer-2"></div>
+                <div class="logo-layer layer-3"></div>
+              </div>
+              <div class="logo-symbol"><span class="logo-ms">ms</span></div>
+              <div class="logo-circuit"></div>
+              <div class="logo-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">msribeiro</span>
+              <span class="logo-subtitle">AI Developer</span>
+            </div>
+          </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="#home" class="nav-link" data-section="home">Início</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">Sobre</a></li>
+          <li><a href="#services" class="nav-link" data-section="services">Serviços</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contato</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="home" class="hero" aria-label="Apresentação">
+      <div class="hero-content" id="main-content">
+        <h1 class="ai-name" id="ai-name">MarceloRibeiro</h1>
+        <h2>Desenvolvedor de Inteligência Artificial</h2>
+        <p>
+          Desenvolvedor Full‑Stack especializado em IA • Criando soluções digitais
+          inovadoras
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Entre em Contato</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- animação (mantida) -->
+        <div class="ai-animation">
+          <div class="hero-icon-container">
+            <div class="hero-icon-core">
+              <div class="hero-icon-layers">
+                <div class="hero-layer hero-layer-1"></div>
+                <div class="hero-layer hero-layer-2"></div>
+                <div class="hero-layer hero-layer-3"></div>
+              </div>
+              <div class="hero-icon-symbol">
+                <div class="ai-brain">
+                  <div class="brain-node node-1"></div>
+                  <div class="brain-node node-2"></div>
+                  <div class="brain-node node-3"></div>
+                  <div class="brain-node node-4"></div>
+                  <div class="brain-connection conn-1"></div>
+                  <div class="brain-connection conn-2"></div>
+                  <div class="brain-connection conn-3"></div>
+                </div>
+              </div>
+              <div class="hero-particles">
+                <div class="hero-particle p-1"></div>
+                <div class="hero-particle p-2"></div>
+                <div class="hero-particle p-3"></div>
+                <div class="hero-particle p-4"></div>
+                <div class="hero-particle p-5"></div>
+              </div>
+            </div>
+            <div class="hero-orbit">
+              <div class="orbit-ring ring-1"></div>
+              <div class="orbit-ring ring-2"></div>
+              <div class="orbit-ring ring-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Desenvolvedor Full‑Stack apaixonado por tecnologia e inovação.
+              Especializado em criar soluções digitais completas, desde landing
+              pages de alta conversão até sistemas complexos com IA. Combino
+              conhecimento técnico avançado em frontend, backend e inteligência
+              artificial para entregar projetos que realmente fazem a diferença
+              no seu negócio.
+            </p>
+            <div class="skills">
+              <div class="skill-item"><i class="fab fa-react"></i><span>React/Next.js</span></div>
+              <div class="skill-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+              <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+              <div class="skill-item"><i class="fas fa-brain"></i><span>Inteligência Artificial</span></div>
+              <div class="skill-item"><i class="fas fa-database"></i><span>Bancos de Dados</span></div>
+              <div class="skill-item"><i class="fas fa-mobile-alt"></i><span>Mobile Development</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-rocket service-icon"></i>
+            <h3>Landing Pages</h3>
+            <p>Páginas de conversão otimizadas com design moderno e foco em resultados</p>
+            <div class="service-features"><span>Design Responsivo</span><span>SEO Otimizado</span><span>Alta Conversão</span></div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-globe service-icon"></i>
+            <h3>Desenvolvimento Web</h3>
+            <p>Sites completos e aplicações web com tecnologias modernas</p>
+            <div class="service-features"><span>React/Next.js</span><span>Node.js</span><span>Performance</span></div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-code service-icon"></i>
+            <h3>Frontend &amp; Backend</h3>
+            <p>Desenvolvimento full‑stack com arquitetura escalável e moderna</p>
+            <div class="service-features"><span>APIs RESTful</span><span>Banco de Dados</span><span>Deploy</span></div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-robot service-icon"></i>
+            <h3>Inteligência Artificial</h3>
+            <p>Soluções de IA personalizadas para automatizar e otimizar processos</p>
+            <div class="service-features"><span>Machine Learning</span><span>Chatbots</span><span>Automação</span></div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-chart-line service-icon"></i>
+            <h3>Análise de Dados</h3>
+            <p>Transformo dados em insights valiosos com dashboards interativos</p>
+            <div class="service-features"><span>Data Science</span><span>Visualização</span><span>Relatórios</span></div>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-mobile-alt service-icon"></i>
+            <h3>Aplicações Mobile</h3>
+            <p>Apps móveis híbridos e PWAs com experiência nativa</p>
+            <div class="service-features"><span>React Native</span><span>PWA</span><span>Cross‑platform</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contact-content">
+          <!-- ===== Informações de contato ===== -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <div><h4>Email</h4><p><a href="mailto:msribeiro2010@gmail.com">msribeiro2010@gmail.com</a></p></div>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <div><h4>LinkedIn</h4><p><a href="https://linkedin.com/in/marcelo-ribeiro" target="_blank" rel="noopener noreferrer">linkedin.com/in/marcelo-ribeiro</a></p></div>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <div><h4>GitHub</h4><p><a href="https://github.com/msribeiro2010" target="_blank" rel="noopener noreferrer">github.com/msribeiro2010</a></p></div>
+            </div>
+          </div>
+
+          <!-- ===== Formulário ===== -->
+          <div aria-live="polite" aria-atomic="true" id="form-status" class="sr-only"></div>
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="from_name" class="sr-only">Seu Nome</label>
+              <input type="text" id="from_name" name="from_name" placeholder="Seu Nome" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="from_email" class="sr-only">Seu Email</label>
+              <input type="email" id="from_email" name="from_email" placeholder="Seu Email" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="message" class="sr-only">Sua Mensagem</label>
+              <textarea id="message" name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+            </div>
+            <!-- campo oculto -->
+            <input type="hidden" name="date_time" id="date_time" />
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              <span id="btn-text">Enviar Mensagem</span>
+              <i id="btn-spinner" class="fas fa-spinner fa-spin" style="display: none" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="mailto:msribeiro2010@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/in/marcelo-ribeiro" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com/msribeiro2010" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </div>
+        <p>© 2025 @msribeiro2010 • Desenvolvedor Full‑Stack &amp; IA</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
