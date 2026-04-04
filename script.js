@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dateHidden.value = new Date().toLocaleString('pt-BR');
     setLoading(true);
 
-    emailjs.sendForm('service_mh1iza9', 'template_63xjy0t', contactForm)
+    emailjs.sendForm('service_mh1iza9', 'template_pj3lwlp', contactForm)
       .then(() => {
         showNotification('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success');
         contactForm.reset();
