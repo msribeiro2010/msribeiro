@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function validate() {
-    const name    = contactForm.from_name.value.trim();
+    const name    = contactForm.name.value.trim();
     const email   = contactForm.from_email.value.trim();
-    const message = contactForm.message.value.trim();
+    const message = contactForm.title.value.trim();
 
     if (!name) {
       showNotification('Por favor, preencha seu nome.', 'error');
-      contactForm.from_name.focus();
+      contactForm.name.focus();
       return false;
     }
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (!message) {
       showNotification('Por favor, escreva sua mensagem.', 'error');
-      contactForm.message.focus();
+      contactForm.title.focus();
       return false;
     }
     return true;
