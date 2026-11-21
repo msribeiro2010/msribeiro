@@ -1,6 +1,6 @@
 # MarceloRibeiro — portfólio
 
-Site pessoal de Marcelo S. Ribeiro, desenvolvedor full-stack especializado em inteligência artificial.
+Site pessoal de Marcelo S. Ribeiro, criador e dev com IA.
 
 Página estática para o GitHub Pages: `index.html`, `style.css` e `script.js`. Sem etapa de build.
 
