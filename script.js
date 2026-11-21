@@ -1,127 +1,167 @@
 document.addEventListener('DOMContentLoaded', () => {
-  emailjs.init('K7F_DE0sdVjTwV0P5');
+  if (window.emailjs) {
+    emailjs.init('K7F_DE0sdVjTwV0P5');
+  }
 
-  // ── Hamburger menu ──────────────────────────────────────────────
-  const hamburger = document.querySelector('.hamburger');
+  const toggle = document.querySelector('.menu-toggle');
   const navMenu = document.getElementById('nav-menu');
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      hamburger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu de navegação');
+  function setMenu(open) {
+    if (!toggle || !navMenu) return;
+    navMenu.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu de navegação');
+  }
+
+  if (toggle && navMenu) {
+    toggle.addEventListener('click', () => {
+      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
-      });
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMenu(false);
     });
   }
 
-  // ── Active nav link via IntersectionObserver ─────────────────────
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link[data-section]');
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.dataset.section === entry.target.id);
-          });
-        }
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          const current = link.dataset.section === entry.target.id;
+          if (current) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
       });
     },
-    { rootMargin: '-50% 0px -50% 0px' }
+    { rootMargin: '-45% 0px -50% 0px' }
   );
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach((section) => observer.observe(section));
 
-  // ── Contact form ─────────────────────────────────────────────────
   const contactForm = document.getElementById('contact-form');
   if (!contactForm) return;
 
-  const submitBtn   = document.getElementById('submit-btn');
-  const btnText     = document.getElementById('btn-text');
-  const btnSpinner  = document.getElementById('btn-spinner');
-  const dateHidden  = document.getElementById('date_time');
-  const formStatus  = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const dateHidden = document.getElementById('date_time');
+  const formStatus = document.getElementById('form-status');
 
   function setLoading(loading) {
     submitBtn.disabled = loading;
-    btnText.style.display    = loading ? 'none'         : 'inline-block';
-    btnSpinner.style.display = loading ? 'inline-block' : 'none';
+    submitBtn.setAttribute('aria-busy', String(loading));
+    btnText.textContent = loading ? 'Enviando…' : 'Enviar mensagem';
+  }
+
+  function setFieldError(input, message) {
+    const error = document.getElementById(`${input.id}-error`);
+    if (!error) return;
+    if (message) {
+      input.setAttribute('aria-invalid', 'true');
+      error.hidden = false;
+      error.textContent = message;
+    } else {
+      input.removeAttribute('aria-invalid');
+      error.hidden = true;
+      error.textContent = '';
+    }
+  }
+
+  function clearErrors() {
+    ['name', 'from_email', 'title'].forEach((id) => {
+      const field = contactForm.elements[id];
+      if (field) setFieldError(field, '');
+    });
   }
 
   function validate() {
-    const name    = contactForm.name.value.trim();
-    const email   = contactForm.from_email.value.trim();
+    clearErrors();
+    const name = contactForm.name.value.trim();
+    const email = contactForm.from_email.value.trim();
     const message = contactForm.title.value.trim();
 
     if (!name) {
-      showNotification('Por favor, preencha seu nome.', 'error');
+      setFieldError(contactForm.name, 'Informe seu nome.');
       contactForm.name.focus();
       return false;
     }
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showNotification('Por favor, informe um e-mail válido.', 'error');
+      setFieldError(contactForm.from_email, 'Informe um e-mail válido.');
       contactForm.from_email.focus();
       return false;
     }
     if (!message) {
-      showNotification('Por favor, escreva sua mensagem.', 'error');
+      setFieldError(contactForm.title, 'Escreva sua mensagem.');
       contactForm.title.focus();
       return false;
     }
     return true;
   }
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    if (!validate()) return;
-
-    dateHidden.value = new Date().toLocaleString('pt-BR');
-    setLoading(true);
-
-    emailjs.sendForm('service_mh1iza9', 'template_pj3lwlp', contactForm)
-      .then(() => {
-        showNotification('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success');
-        contactForm.reset();
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        const detail = error?.text || error?.message || JSON.stringify(error);
-        showNotification(`Erro ao enviar mensagem. Tente novamente. (${detail})`, 'error');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  });
-
   function showNotification(message, type) {
     const existing = document.querySelector('.notification');
     if (existing) existing.remove();
-
-    // Update aria-live region for screen readers
     if (formStatus) formStatus.textContent = message;
 
     const div = document.createElement('div');
     div.className = `notification notification-${type}`;
     div.setAttribute('role', 'alert');
-    div.innerHTML = `
-      <div class="notification-content">
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}" aria-hidden="true"></i>
-        <span>${message}</span>
-        <button class="notification-close" aria-label="Fechar notificação" onclick="this.closest('.notification').remove()">
-          <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
-      </div>`;
+
+    const content = document.createElement('div');
+    content.className = 'notification-content';
+
+    const text = document.createElement('p');
+    text.textContent = message;
+
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'notification-close';
+    close.setAttribute('aria-label', 'Fechar notificação');
+    close.textContent = '×';
+    close.addEventListener('click', () => div.remove());
+
+    content.append(text, close);
+    div.append(content);
     document.body.appendChild(div);
 
-    setTimeout(() => { if (div.isConnected) div.remove(); }, 6000);
+    window.setTimeout(() => {
+      if (div.isConnected) div.remove();
+    }, 6000);
   }
+
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!validate()) return;
+
+    if (!window.emailjs) {
+      showNotification('Não foi possível enviar agora. Escreva para msribeiro2010@gmail.com.', 'error');
+      return;
+    }
+
+    dateHidden.value = new Date().toLocaleString('pt-BR');
+    setLoading(true);
+
+    emailjs
+      .sendForm('service_mh1iza9', 'template_pj3lwlp', contactForm)
+      .then(() => {
+        showNotification('Mensagem enviada com sucesso. Entrarei em contato em breve.', 'success');
+        contactForm.reset();
+        clearErrors();
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        showNotification('Não foi possível enviar a mensagem. Tente de novo ou use o e-mail.', 'error');
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  });
 });
